@@ -3,7 +3,7 @@ from . forms import CreateUserForm
 
 from django.contrib.auth.forms import AuthenticationForm
 
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from django.http import HttpResponse
 
@@ -57,7 +57,7 @@ def user_login(request):
 
                 login(request, user)
 
-                return HttpResponse('writer-dashboard')
+                return redirect('user-dashboard')
 
 
             # if user is not None and user.is_writer==False:
@@ -70,6 +70,12 @@ def user_login(request):
     context = {'LoginForm': form}
 
     return render(request, 'account/user_login.html', context)
+
+def user_logout(request):
+    
+    logout(request)
+    
+    return redirect('user-login')
 
 
 

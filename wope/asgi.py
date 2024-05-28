@@ -1,5 +1,5 @@
 """
-ASGI config for django-proj-template project.
+ASGI config for wope project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django-proj-template.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wope.settings')
 
 application = get_asgi_application()
